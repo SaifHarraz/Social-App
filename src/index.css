@@ -1,0 +1,57 @@
+@import "tailwindcss";
+@import "@heroui/styles"; 
+
+@theme {
+  --color-primary: #00298d;
+  --color-primary-hover: #001f6b;
+  --color-primary-light: #f0f2f5;
+  --color-primary-border: #c9d5ff;
+  --color-primary-bg: #f2f6ff;
+}
+
+/* Auth */
+
+.auth-title {
+  @apply text-3xl font-extrabold text-primary;
+}
+
+.auth-description {
+  @apply text-base font-medium leading-snug text-slate-700;
+}
+
+/* Brand */
+
+.brand-card {
+  @apply mt-6 rounded-2xl border border-primary-border bg-white/80 p-4 shadow-sm backdrop-blur;
+}
+
+.brand-label {
+  @apply text-sm font-extrabold uppercase tracking-[0.14em] text-primary;
+}
+
+.brand-title {
+  @apply mt-1 text-lg font-bold text-slate-900;
+}
+
+.brand-description {
+  @apply mt-2 text-sm leading-relaxed text-slate-700;
+}
+
+/* Stats */
+
+.stats-grid {
+  @apply mt-4 grid grid-cols-2 gap-2 sm:grid-cols-3;
+}
+
+.stat-card {
+  @apply rounded-xl border border-primary-border bg-primary-bg px-3 py-2;
+}
+
+.stat-value {
+  @apply text-base font-extrabold text-primary;
+}
+
+.stat-label {
+  @apply text-xs font-bold uppercase tracking-wide text-slate-600;
+}
+
