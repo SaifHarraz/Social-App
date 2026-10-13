@@ -3,7 +3,7 @@ import type { RegisterFormSchema } from "../Schema/register";
 import axios from 'axios';
 
 
-const baseUrl= "https://Saif-posts.routemisr.com"
+const baseUrl= "https://route-posts.routemisr.com"
 const signUpEndpoint= `users/signup`
 const signInEndpoint= `users/signin`
 

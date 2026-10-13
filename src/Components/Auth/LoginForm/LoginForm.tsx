@@ -6,9 +6,10 @@ import { useNavigate } from "react-router-dom";
 import type { LoginFormData } from "../../../interface/Login";
 import { loginSchema, type LoginFormSchema } from "../../../Schema/login";
 import { signIn } from "../../../Services/auth.service";
-
+import   {useAuth}  from "../../../context/authContext";
 export default function LoginForm() {
    const navigate=useNavigate()
+   const {saveUserToken}=useAuth()
   const {register,handleSubmit,formState:{errors,isValid,isSubmitting
 }}= useForm<LoginFormSchema>({
   mode:'onChange' ,
@@ -23,11 +24,13 @@ export default function LoginForm() {
     try {
      const {message,token} =await signIn(data)  
      console.log(message,token);
+     saveUserToken(token);
      toast.success(message);
+     // programitically navigation
      navigate("/feed")
     } catch (error:unknown) { 
      if (axios.isAxiosError(error)) {
-       toast.danger(error?.response?.data.message??"somthing went  wrong ")
+       toast.danger(error?.response?.data.message??"somthing wentttt  wrong ")
        console.log(error?.response?.data.message);
       }else{
        toast.danger("somthing went  wrong ") 

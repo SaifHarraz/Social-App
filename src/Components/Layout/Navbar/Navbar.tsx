@@ -8,22 +8,30 @@ import {
   UserGroup,
   UserRound,
 } from "lucide-react";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
+import { useAuth } from "../../../context/authContext";
 
 export default function Navbar() {
+  const navigate=useNavigate()
+  const {isAuthenticated,removeUserToken}=useAuth()
+  console.log("isAuthenticated",isAuthenticated);
+  
   const navItems = [
     { to: "/feed", label: "Feed", Icon: House },
     { to: "/profile", label: "Profile", Icon: UserRound },
     { to: "/notifications", label: "Notifications", Icon: Bell },
   ];
-
+   function logoutHandler() {
+    removeUserToken()
+    navigate("/auth/login")
+   }
   return (
     <nav className="sticky top-0 z-40 border-b border-slate-200/90 bg-white/95 backdrop-blur">
       <div className="mx-auto flex max-w-7xl items-center justify-between gap-2 px-2 py-1.5 sm:gap-3 sm:px-3">
         {/* Logo */}
         <div className="flex shrink-0 items-center gap-3">
           {/* <img
-            src="/Saif.png"
+            src="/Saif.png" 
             alt="Saif Posts"
             className="h-9 w-9 rounded-xl object-cover"
           /> */}
@@ -33,7 +41,9 @@ export default function Navbar() {
           </span>
         </div>
 
-        {/* Navigation */}
+        {isAuthenticated && 
+        <>
+        {/* Nav Items */}
         <div className="flex min-w-0 items-center gap-1 overflow-x-auto rounded-2xl border border-slate-200 bg-slate-50/90 px-1 py-1 sm:px-1.5">
           {navItems.map(({ to, label, Icon }) => (
             <NavLink
@@ -90,6 +100,7 @@ export default function Navbar() {
               </Dropdown.Item>
 
               <Dropdown.Item
+                onPress={logoutHandler}
                 id="logout"
                 textValue="Logout"
                 variant="danger"
@@ -100,7 +111,8 @@ export default function Navbar() {
               </Dropdown.Item>
             </Dropdown.Menu>
           </Dropdown.Popover>
-        </Dropdown>
+        </Dropdown>  
+        </>}
       </div>
     </nav>
   );
