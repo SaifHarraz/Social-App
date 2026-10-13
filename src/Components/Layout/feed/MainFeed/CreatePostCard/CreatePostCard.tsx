@@ -1,8 +1,7 @@
-import React from "react";
 import { Image as ImageIcon, Smile, Send, Earth } from "lucide-react";
 import { Avatar } from "@heroui/react";
 
-export const CreatePostCard: React.FC = () => {
+export default function CreatePostCard() {
   return (
     <div className="rounded-2xl border border-slate-200 bg-white p-4 shadow-sm">
       <div className="mb-3 flex items-start gap-3">
@@ -59,4 +58,4 @@ export const CreatePostCard: React.FC = () => {
       </div>
     </div>
   );
-};
+}

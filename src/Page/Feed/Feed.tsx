@@ -1,7 +1,7 @@
 import React from "react";
 import { SidebarNavigation } from "../../Components/Layout/feed/SidebarNavigation/SidebarNavigation";
-import { MainFeed } from "../../Components/Layout/feed/MainFeed/MainFeed";
 import { RightSidebar } from "../../Components/Layout/feed/RightSidebar/RightSidebar";
+import MainFeed from "../../Components/Layout/feed/MainFeed/MainFeed";
 
 export const Feed: React.FC = () => {
   return (

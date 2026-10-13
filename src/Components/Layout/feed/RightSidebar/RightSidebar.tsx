@@ -2,7 +2,7 @@ import React from "react";
 import { Users } from "lucide-react";
 import { FriendSearchInput } from "./FriendSearchInput/FriendSearchInput";
 import { FriendCardList } from "./FriendCardList/FriendCardList";
-import type { FriendSuggestion } from "../../../../interface/feed";
+import type { FriendSuggestion } from "../../../../interface/post";
 
 export const RightSidebar: React.FC = () => {
   const suggestedFriends: FriendSuggestion[] = [

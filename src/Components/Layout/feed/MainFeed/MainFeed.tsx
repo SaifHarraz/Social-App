@@ -1,35 +1,9 @@
-import React from "react";
-import { CreatePostCard } from "./CreatePostCard/CreatePostCard";
-import { PostList } from "./PostList/PostList";
+import { Button } from "@heroui/react";
+import CreatePostCard from "./CreatePostCard/CreatePostCard";
 import { MobileSuggestedFriendsToggle } from "./MobileSuggestedFriendsToggle/MobileSuggestedFriendsToggle";
-import {type Post } from "../../../../interface/feed";
+import PostList from "./PostList/PostList";
 
-export const MainFeed: React.FC = () => {
-  const samplePosts: Post[] = [
-    {
-      id: "1",
-      author: {
-        name: "Nelle Rosa",
-        username: "nefoqe",
-        avatarUrl: "https://pub-3cba56bacf9f4965bbb0989e07dada12.r2.dev/linkedPosts/default-profile.png",
-      },
-      timestamp: "33m",
-      visibility: "Public",
-      content: "test😎😎",
-      mediaUrl: "https://pub-3cba56bacf9f4965bbb0989e07dada12.r2.dev/linked-posts/1791852748850-1a2f2b93-323e-4955-be71-3d1af5953ac0-Arc-Raiders--Andrew-Svanberg-Hamilton.webp",
-      likesCount: 2,
-      sharesCount: 1,
-      commentsCount: 2,
-      topComment: {
-        author: {
-          name: "Nelle Rosa",
-          username: "nefoqe",
-          avatarUrl: "https://pub-3cba56bacf9f4965bbb0989e07dada12.r2.dev/linkedPosts/default-profile.png",
-        },
-        text: "sssssss",
-      },
-    },
-  ];
+export default function MainFeed() {
 
   return (
     <section className="space-y-4">
@@ -51,7 +25,8 @@ export const MainFeed: React.FC = () => {
       </div>
       <MobileSuggestedFriendsToggle />
       <CreatePostCard />
-      <PostList posts={samplePosts} />
+      <PostList />
+      {/* <Button className="w-full">See more</Button > should be added at the end of postList kinda lazy for pagination leave it for now  */}   
     </section>
   );
 };

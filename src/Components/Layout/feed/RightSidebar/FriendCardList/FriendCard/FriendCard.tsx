@@ -1,7 +1,7 @@
 import React from "react";
 import { UserPlus } from "lucide-react";
 import { Avatar } from "@heroui/react";
-import {type FriendSuggestion } from "../../../../../../interface/feed";
+import {type FriendSuggestion } from "../../../../../../interface/post";
 
 interface FriendCardProps {
   friend: FriendSuggestion;

@@ -16,14 +16,14 @@ export function AuthProvider({ children }: AuthProviderProps) {
   const [token, setToken] = useState<string |  null>(()=>localStorage.getItem("user_token"));  //lazy initialization
   const isAuthenticated = Boolean(token);  //state derived handler  to be used for ui updates
   function saveUserToken(token: string) {
-    setToken(token);
+    // setToken(token);
     localStorage.setItem("user_token", token);
   }
   function removeUserToken() {
     setToken(null);
     localStorage.removeItem("user_token");
   }
-  console.log("AuthProvider",token);
+  // console.log("AuthProvider",token);
   
   return (
     <AuthContext.Provider value={{ token, saveUserToken,removeUserToken,isAuthenticated }}>

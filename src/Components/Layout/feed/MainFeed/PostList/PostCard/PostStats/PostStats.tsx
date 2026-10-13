@@ -1,13 +1,12 @@
 import React from "react";
 import { ThumbsUp, Repeat2 } from "lucide-react";
+import type { Post } from "../../../../../../../interface/post";
 
 interface PostStatsProps {
-  likesCount: number;
-  sharesCount: number;
-  commentsCount: number;
+  post:Post
 }
 
-export const PostStats: React.FC<PostStatsProps> = ({ likesCount, sharesCount, commentsCount }) => {
+export default function PostStats ({ post:{likesCount,sharesCount,commentsCount}}:PostStatsProps){
   return (
     <div className="px-4 pb-2 pt-3 text-sm text-slate-500">
       <div className="flex flex-wrap items-center justify-between gap-2">

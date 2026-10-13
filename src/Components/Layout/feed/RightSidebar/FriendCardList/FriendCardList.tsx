@@ -1,6 +1,6 @@
 import React from "react";
 import { FriendCard } from "./FriendCard/FriendCard";
-import type { FriendSuggestion } from "../../../../../interface/feed";
+import type { FriendSuggestion } from "../../../../../interface/post";
 
 
 interface FriendCardListProps {
